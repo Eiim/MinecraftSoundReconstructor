@@ -93,14 +93,12 @@ public class Main {
 				// How many slots aren't filled up yet?
 				int avail = 0;
 				while(i+avail < tsound.length && active[i+avail] < 247) avail++;
-				System.out.println(avail);
 				// Only use short enough sounds
 				ArrayList<SoundData> candidates = new ArrayList<>();
 				for(SoundData sound : mcSounds) {
 					if(avail >= sound.samples().length) candidates.add(sound);
 				}
 				if(candidates.size() == 0) continue;
-				flag = true;
 				double bestQual = Double.MAX_VALUE;
 				int bestIndex = -1;
 				double bestMult = 0;
@@ -132,6 +130,7 @@ public class Main {
 					onsets.add(i);
 					multipliers.add(bestMult);
 					sounds.add(assets.get(bestIndex));
+					flag = true;
 				}
 			}
 		}
@@ -160,9 +159,11 @@ public class Main {
 		double mult = cross / soundsq;
 		if(mult < 0) return new MultResult(0, Double.MAX_VALUE);
 		double resid = 0;
+		double residPart = 0;
 		for(int i = 0; i < sound.samples().length; i++) {
 			for(int j = 0; j < 2400; j++) {
-				resid += (target[i+offset][j] - mult * sound.samples()[i][j]) * (target[i+offset][j] - mult * sound.samples()[i][j]);
+				residPart = target[i+offset][j] - mult * sound.samples()[i][j];
+				resid += residPart * residPart;
 			}
 		}
 		return new MultResult(mult, resid / basePart);
