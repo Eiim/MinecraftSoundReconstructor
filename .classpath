@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.alibaba.fastjson2/fastjson2/2.0.50/ca5d1ddfd4f1cfb6081966179ef0acd72e6d5784/fastjson2-2.0.50.jar" sourcepath="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.alibaba.fastjson2/fastjson2/2.0.50/46ab89af1f8da7690e6d811dcb6c75bc68e11c35/fastjson2-2.0.50-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
