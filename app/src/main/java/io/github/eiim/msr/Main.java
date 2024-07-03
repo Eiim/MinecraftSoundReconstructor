@@ -151,7 +151,7 @@ public class Main {
 		double basePart = 0;
 		for(int i = 0; i < sound.samples().length; i++) {
 			for(int j = 0; j < 2400; j++) {
-				cross += (int)target[i+offset][j] * sound.samples()[i][j];
+				cross += target[i+offset][j] * sound.samples()[i][j];
 			}
 			soundsq += sound.squares()[i];
 			basePart += base[i+offset];
