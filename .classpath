@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="app/bin/default"/>
+	<classpathentry output="app/bin/main" kind="src" path="app/src/main/java">
 		<attributes>
-			<attribute name="module" value="true"/>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.alibaba.fastjson2/fastjson2/2.0.50/ca5d1ddfd4f1cfb6081966179ef0acd72e6d5784/fastjson2-2.0.50.jar" sourcepath="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.alibaba.fastjson2/fastjson2/2.0.50/46ab89af1f8da7690e6d811dcb6c75bc68e11c35/fastjson2-2.0.50-sources.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/"/>
+	<classpathentry sourcepath="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.alibaba.fastjson2/fastjson2/2.0.51/512388abd0a6287680684c5e1c50ecf2f7243d83/fastjson2-2.0.51-sources.jar" kind="lib" path="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.alibaba.fastjson2/fastjson2/2.0.51/d06f5b49325e844230938d609039e0d9a2631396/fastjson2-2.0.51.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry sourcepath="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.github.stephengold/j-ogg-vorbis/1.0.5/b927df27ef0b059f77552aef81c926a2d3adb350/j-ogg-vorbis-1.0.5-sources.jar" kind="lib" path="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/com.github.stephengold/j-ogg-vorbis/1.0.5/90388f9cd7972d22e58fc6fa016c815df62e423/j-ogg-vorbis-1.0.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/ethan/.gradle/caches/modules-2/files-2.1/javax.media/jmf/2.1.1e/fe9287a362578bfb8b7b9dba42af0ec80a297abb/jmf-2.1.1e.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 </classpath>

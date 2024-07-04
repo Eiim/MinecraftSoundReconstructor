@@ -14,6 +14,8 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 
+import io.github.eiim.msr.Main.SoundData;
+
 public class MojangClient {
 	private static final String userAgent = "MinecraftSoundReconstructor/0.1";
 	private static final String manifestURL = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json";
@@ -90,5 +92,14 @@ public class MojangClient {
 	}
 	
 	public record Version(String version, String packageURL) { }
-	public record SoundAsset(File path, String hash) { }
+	public static class SoundAsset {
+		public File path;
+		public String hash;
+		public SoundData data;
+		
+		public SoundAsset(File path, String hash) {
+			this.path = path;
+			this.hash = hash;
+		}
+	}
 }
