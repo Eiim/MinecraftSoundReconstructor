@@ -51,14 +51,15 @@ public class Main {
     
     private static SoundData getApproximation(List<SoundAsset> assets, String target, int threads) {
     	System.out.println("Loading target audio file...");
+    	
     	SoundData targetData = Main.loadTarget(target);
     	
-    	System.out.println("Loading sound files (this will take a while)...");
+    	System.out.println("Loading sound files (this may take a while)...");
 		long start = System.currentTimeMillis();
     	Queue<SoundAsset> assetQueue = new LinkedList<>(assets);
     	Thread[] threadPool = new Thread[threads];
     	for(int i = 0; i < threads; i++) {
-			Thread t = new Thread(() -> {
+			threadPool[i] = new Thread(() -> {
 				while (!assetQueue.isEmpty()) {
 					SoundAsset asset = null;
 					synchronized (assetQueue) {
@@ -69,8 +70,7 @@ public class Main {
 					asset.data = loadAsset(asset.path);
 				}
 			});
-			t.start();
-			threadPool[i] = t;
+			threadPool[i].start();
     	}
     	for(Thread t : threadPool) {
     		try {
@@ -87,7 +87,7 @@ public class Main {
 		}
 		System.out.println("Read "+(totalTicks/20)+" seconds of audio data in "+(duration/1000)+" seconds (Ratio: "+((totalTicks/20.0)/(duration/1000))+")");
     	System.out.println(assets.size()+" sound files loaded");
-    	AppxResult res = Calculation.approximate(assets, targetData);
+    	AppxResult res = Calculation.approximate(assets, targetData, threads);
     	writeSoundFile(new File("appx-"+target), new SoundData(target, res.sound()));
     	return new SoundData(target, res.sound());
     }
@@ -184,7 +184,7 @@ public class Main {
 				samples.add(shortSamples);
 				shortSamples = new short[2400];
 			}
-			stream.close();
+			vstream.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

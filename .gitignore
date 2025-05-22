@@ -28,3 +28,4 @@ replay_pid*
 
 # Output directory
 /app/build
+/build/
